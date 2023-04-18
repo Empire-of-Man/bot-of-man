@@ -1,7 +1,8 @@
 ## Prerequisites
 
-- `node` v16.9.0 or higher
-- `git` command line
+- `node` node v16.9.0 or higher
+- `git` git command line
+- `tsc` typescript compiler
 
 ## Installation
 
