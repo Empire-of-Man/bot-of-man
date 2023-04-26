@@ -1,13 +1,12 @@
 import { Client, ClientOptions, Collection, MessageComponentInteraction } from "discord.js";
-import { SlashCommand } from "./SlashCommand";
+import { ComponentHandler, MessageCommand, SlashCommand, UserCommand } from "./index";
 
-/**
- * The main bot client with additional properties
- */
 export class BotClient extends Client {
 	constructor(options: ClientOptions) {
 		super(options);
 	}
 	slashCommands: Collection<string, SlashCommand> = new Collection();
-	handlers: Collection<string, ((i: MessageComponentInteraction) => any) | undefined> = new Collection();
+	userCommands: Collection<string, UserCommand> = new Collection();
+	messageCommands: Collection<string, MessageCommand> = new Collection();
+	componentHandlers: Collection<string, ComponentHandler<MessageComponentInteraction>> = new Collection();
 }
